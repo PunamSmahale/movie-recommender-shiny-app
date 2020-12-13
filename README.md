@@ -1,6 +1,6 @@
 # Movie Recommender
 
-This is code for a shiny app for a movie recommender based on 2 systems - Favorite Genre & Collaborative Filtering. 
+This is shiny app code for a movie recommender based on 2 systems - Favorite Genre & Collaborative Filtering. 
 
 ### Systems I & II
 System I - Favorite Genre
