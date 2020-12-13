@@ -56,18 +56,22 @@ shinyServer(function(input, output, session) {
   system1 = eventReactive(input$btn_genre_movies, {
     withBusyIndicatorServer("btn_genre_movies", {
       
-      numberofresult = 50
+     
       # Select movies for the selected genre by user
       selectedMoviesByGenre = subset(movies, grepl(input$selected_genre, movies$Genres, fixed = TRUE), select = c(MovieID, Title, image_url ))
      
       selectedMoviesByGenre$MovieID = as.integer(selectedMoviesByGenre$MovieID)
       # Select movies with ratings >= 4
       selectedMoviesByRating = subset(ratings, Rating>=4, select = c(MovieID, Rating))
-      systemresult = dplyr::semi_join(selectedMoviesByGenre, selectedMoviesByRating, by= "MovieID")
-
+      system1Result = selectedMoviesByRating %>% inner_join(selectedMoviesByGenre, by= "MovieID")
+      rating_summary = system1Result %>% group_by(Rating) %>% summarise(rating_count=n())
       
-      systemresult = systemresult[sample(nrow(systemresult), ifelse(nrow(systemresult) < numberofresult, nrow(systemresult) , numberofresult)),]
-      systemresult
+      final_selected_movies = c()
+      if (rating_summary$rating_count[1] > 1000 || rating_summary$rating_count[2] > 1000) {
+        final_selected_movies = head(subset(system1Result[sample(nrow(system1Result), 50),], !duplicated(MovieID)), 10)
+      }
+      
+      final_selected_movies
     })
   })
   
