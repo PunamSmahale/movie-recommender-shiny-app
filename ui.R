@@ -22,8 +22,7 @@ source('functions/helpers.R')
 
 all_genres = c("Action", "Adventure", "Animation", "Children", 
                "Comedy", "Crime","Documentary", "Drama", "Fantasy", "Film-Noir",
-               "Horror", "Musical", "Mystery","Romance",
-               "Sci-Fi", "Thriller", "War", "Western")
+               "Horror", "Musical", "Mystery","Romance", "Sci-Fi", "Thriller", "War", "Western")
 
 shinyUI(
   dashboardPage(skin = "yellow",
