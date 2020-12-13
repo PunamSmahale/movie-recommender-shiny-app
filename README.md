@@ -23,6 +23,9 @@ You will need RStudio IDE. Download/clone the above repo and open the ui.R or se
 
 Also, the app is hosted on shinyapps.io - https://mahale.shinyapps.io/project4-shiny-app/
 
+## Testing
+I was able to test this app on Chrome/Safari browser. I have not tried other browsers.
+
 ## Acknowledgements
 1. UIUC CS 598 Team of professor (Feng Liang) and instructors. 
 2. https://www.kaggle.com/philippsp/book-recommender-collaborative-filtering-shiny
