@@ -5,7 +5,8 @@ This is shiny app code for a movie recommender based on 2 systems - Favorite Gen
 ### Systems I & II
 System I - Favorite Genre
 
-By default, the System I View will be displayed when the app is run. You can select a genre from the dropdown and click on the button to get recommendations. The movies that are highly rated (With ratings of 4 stars or 5 stars) in the selected genre are recommended.
+By default, the System I View will be displayed when the app is run. You can select a genre from the dropdown and click on the button to get recommendations. The movies that are highly rated i.e. at least 1000 users have rated the movie with ratings of 4 stars or 5 stars in the selected genre are recommended.
+
 
 System II - Collaborative filtering. 
 
